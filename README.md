@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Number Guessing Game - README</title>
-</head>
 <body>
   <h1>Number Guessing Game</h1>
   <p>A simple Python console game where the player tries to guess a randomly generated number within a limited number of tries, based on chosen difficulty.</p>
