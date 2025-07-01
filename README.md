@@ -2,25 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Number Guessing Game Form</title>
+  <title>Number Guessing Game - README</title>
 </head>
 <body>
   <h1>Number Guessing Game</h1>
-  <form>
-    <label for="startNumber">Start Number:</label><br />
-    <input type="number" id="startNumber" name="startNumber" required /><br /><br />
+  <p>A simple Python console game where the player tries to guess a randomly generated number within a limited number of tries, based on chosen difficulty.</p>
 
-    <label for="endNumber">End Number:</label><br />
-    <input type="number" id="endNumber" name="endNumber" required /><br /><br />
+  <h2>How to Play</h2>
+  <ol>
+    <li>Run the Python script.</li>
+    <li>Enter the start and end numbers to set the guessing range.</li>
+    <li>Choose a difficulty level:
+      <ul>
+        <li><strong>Easy</strong> — 5 tries</li>
+        <li><strong>Medium</strong> — 3 tries (default)</li>
+        <li><strong>Hard</strong> — 2 tries</li>
+      </ul>
+    </li>
+    <li>Try to guess the number within the allowed attempts.</li>
+    <li>The game will tell you if your guess is correct or how many attempts you have left.</li>
+  </ol>
 
-    <label for="difficulty">Choose Difficulty:</label><br />
-    <select id="difficulty" name="difficulty" required>
-      <option value="easy">Easy (5 tries)</option>
-      <option value="medium" selected>Medium (3 tries)</option>
-      <option value="hard">Hard (2 tries)</option>
-    </select><br /><br />
+  <h2>Requirements</h2>
+  <ul>
+    <li>Python 3.x</li>
+  </ul>
 
-    <button type="submit">Start Game</button>
-  </form>
+  <h2>How to Run</h2>
+  <p>Run the script in your terminal or command prompt:</p>
+  <pre><code>python guessing_game.py</code></pre>
+
+  <h2>Features</h2>
+  <ul>
+    <li>Input validation for numbers.</li>
+    <li>Different difficulty levels with varying number of tries.</li>
+    <li>Clear prompts and feedback messages.</li>
+  </ul>
+
+  <hr />
+  <p>Enjoy the game!</p>
 </body>
 </html>
