@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Number Guessing Game - README</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        pre {
-            background-color: #eee;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        code {
-            font-family: monospace;
-        }
-        hr {
-            margin: 30px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Number Guessing Game Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f3f3f3;
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
 </head>
 <body>
-    <h1>Number Guessing Game</h1>
+  <h1>Number Guessing Game</h1>
+  <form id="guessingForm">
+    <label for="startNumber">Start Number:</label>
+    <input type="number" id="startNumber" name="startNumber" required />
 
-    <p>A simple Python console game where the player tries to guess a randomly generated number within a certain number of tries based on difficulty.</p>
+    <label for="endNumber">End Number:</label>
+    <input type="number" id="endNumber" name="endNumber" required />
 
-    <h2>How to Play</h2>
-    <ol>
-        <li>Run the Python script.</li>
-        <li>Enter the start and end numbers to define the range.</li>
-        <li>Choose a difficulty level:
-            <ul>
-                <li><strong>easy</strong> — 5 tries</li>
-                <li><strong>medium</strong> — 3 tries (default)</li>
-                <li><strong>hard</strong> — 2 tries</li>
-            </ul>
-        </li>
-        <li>Try to guess the number within the allowed attempts.</li>
-        <li>The game will tell you if your guess is correct or how many attempts you have left.</li>
-    </ol>
+    <label for="difficulty">Choose Difficulty:</label>
+    <select id="difficulty" name="difficulty" required>
+      <option value="easy">Easy (5 tries)</option>
+      <option value="medium" selected>Medium (3 tries)</option>
+      <option value="hard">Hard (2 tries)</option>
+    </select>
 
-    <h2>Requirements</h2>
-    <ul>
-        <li>Python 3.x</li>
-    </ul>
+    <button type="submit">Start Game</button>
+  </form>
 
-    <h2>How to Run</h2>
-    <p>Run the script in your terminal or command prompt:</p>
-    <pre><code>python guessing_game.py</code></pre>
+  <script>
+    document.getElementById('guessingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const start = parseInt(document.getElementById('startNumber').value);
+      const end = parseInt(document.getElementById('endNumber').value);
+      const difficulty = document.getElementById('difficulty').value;
 
-    <h2>Features</h2>
-    <ul>
-        <li>Input validation for numbers.</li>
-        <li>Different difficulty levels with varying number of tries.</li>
-        <li>Clear prompts and feedback messages.</li>
-    </ul>
+      if (start >= end) {
+        alert("Start number must be less than end number.");
+        return;
+      }
 
-    <hr />
-    <p>Enjoy the game!</p>
+      alert(`Game will start with range ${start} to ${end} on ${difficulty} difficulty.`);
+      // Here you can add logic to start the game or send data to a backend
+    });
+  </script>
 </body>
 </html>
